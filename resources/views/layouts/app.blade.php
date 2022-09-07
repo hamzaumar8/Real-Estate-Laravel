@@ -33,7 +33,7 @@
 
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
     @include('layouts.sidebar')
-    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200 ">
         @include('layouts.navigation')
         <div class="w-full px-6 py-6 mx-auto">
             {{ $slot }}
@@ -55,7 +55,7 @@
 
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
-    <script src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
+    <script src="{{ asset('assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
 </body>
 
 </html>
