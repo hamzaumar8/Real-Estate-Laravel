@@ -11,33 +11,51 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
+    <!-- Nucleo Icons -->
+    <link href="{{ asset('assets/css/nucleo-icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
+    <!-- Popper -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <!-- CSS Files -->
+    <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
+
     <!-- styles -->
     @livewireStyles
+    @powerGridStyles
 
     <!-- Scripts -->
     @wireUiScripts
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+<body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+    @include('layouts.sidebar')
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
         @include('layouts.navigation')
-
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
-
-        <!-- Page Content -->
-        <main>
+        <div class="w-full px-6 py-6 mx-auto">
             {{ $slot }}
-        </main>
+        </div>
+
+    </main>
+
+
+    @if(session()->has('success'))
+    <div x-data="{ show: true}" x-init="setTimeout(() => show = false, 4000)" x-show="show"
+        class="position-fixed bg-success rounded right-3 text-sm py-2 px-4">
+        <p class="m-0">{{ session('success')}}</p>
     </div>
+    @endif
 
     <!-- Scripts -->
     @livewireScripts
+    @powerGridScripts
+
+    <!--   Core JS Files   -->
+    <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
+    <script src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
 </body>
 
 </html>
