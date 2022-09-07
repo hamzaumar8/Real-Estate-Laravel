@@ -49,17 +49,12 @@
                             <a class="ease-soft py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors"
                                 href="javascript:;">
                                 <div class="flex py-1">
-                                    <div class="my-auto">
-                                        <img src="../assets/img/team-2.jpg"
-                                            class="inline-flex items-center justify-center mr-4 text-white text-sm h-9 w-9 max-w-none rounded-xl" />
+                                    <div class="my-auto mr-2">
+                                        <i class="fa fa-user"></i>
                                     </div>
                                     <div class="flex flex-col justify-center">
-                                        <h6 class="mb-1 font-normal leading-normal text-sm"><span
-                                                class="font-semibold">New message</span> from Laur</h6>
-                                        <p class="mb-0 leading-tight text-xs text-slate-400">
-                                            <i class="mr-1 fa fa-clock"></i>
-                                            13 minutes ago
-                                        </p>
+                                        <h6 class="mb-1 font-normal leading-normal text-sm">Profile</h6>
+
                                     </div>
                                 </div>
                             </a>
@@ -68,36 +63,11 @@
                             <a class="ease-soft py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700"
                                 href="javascript:;">
                                 <div class="flex py-1">
-                                    <div
-                                        class="inline-flex items-center justify-center my-auto mr-4 text-white transition-all duration-200 ease-nav-brand text-sm bg-gradient-to-tl from-slate-600 to-slate-300 h-9 w-9 rounded-xl">
-                                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <title>credit-card</title>
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF"
-                                                    fill-rule="nonzero">
-                                                    <g transform="translate(1716.000000, 291.000000)">
-                                                        <g transform="translate(453.000000, 454.000000)">
-                                                            <path class="color-background"
-                                                                d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
-                                                                opacity="0.593633743"></path>
-                                                            <path class="color-background"
-                                                                d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z">
-                                                            </path>
-                                                        </g>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </svg>
+                                    <div class="my-auto mr-2">
+                                        <i class="fa fa-user"></i>
                                     </div>
                                     <div class="flex flex-col justify-center">
-                                        <h6 class="mb-1 font-normal leading-normal text-sm">Payment successfully
-                                            completed</h6>
-                                        <p class="mb-0 leading-tight text-xs text-slate-400">
-                                            <i class="mr-1 fa fa-clock"></i>
-                                            2 days
-                                        </p>
+                                        <h6 class="mb-1 font-normal leading-normal text-sm">Log Out</h6>
                                     </div>
                                 </div>
                             </a>
