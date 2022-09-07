@@ -15,7 +15,9 @@
         </nav>
 
         <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
+            <div class="flex items-center md:ml-auto md:pr-4">
 
+            </div>
             <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
 
                 <li class="flex items-center pl-4 xl:hidden">
@@ -30,21 +32,13 @@
                         </div>
                     </a>
                 </li>
-                <li class="flex items-center px-4">
-                    <a href="javascript:;" class="p-0 transition-all text-sm ease-nav-brand text-slate-500">
-                        <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
-                        <!-- fixed-plugin-button-nav  -->
-                    </a>
-                </li>
-
-                <!-- notifications -->
 
                 <li class="relative flex items-center pr-2">
                     <p class="hidden transform-dropdown-show"></p>
                     <a href="javascript:;" class="block p-0 transition-all text-sm ease-nav-brand text-slate-500"
                         dropdown-trigger aria-expanded="false">
                         <i class="fa fa-user sm:mr-1"></i>
-                        <span class="hidden sm:inline">Sign In</span>
+                        <span class="hidden sm:inline sm:mr-1">Hamza Umar</span>
                         <i class="cursor-pointer fa fa-chevron-down"></i>
                     </a>
 

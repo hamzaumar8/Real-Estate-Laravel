@@ -16,8 +16,7 @@
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
-                            <div
-                                class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                            <div class="inline-block w-12 h-12 text-center rounded-lg bg-green-500">
                                 <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
                             </div>
                         </div>
@@ -41,8 +40,7 @@
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
-                            <div
-                                class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                            <div class="inline-block w-12 h-12 text-center rounded-lg bg-green-500">
                                 <i class="ni leading-none ni-world text-lg relative top-3.5 text-white"></i>
                             </div>
                         </div>
@@ -66,8 +64,7 @@
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
-                            <div
-                                class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                            <div class="inline-block w-12 h-12 text-center rounded-lg bg-green-500">
                                 <i class="ni leading-none ni-paper-diploma text-lg relative top-3.5 text-white"></i>
                             </div>
                         </div>
@@ -91,8 +88,7 @@
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
-                            <div
-                                class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                            <div class="inline-block w-12 h-12 text-center rounded-lg bg-green-500">
                                 <i class="ni leading-none ni-cart text-lg relative top-3.5 text-white"></i>
                             </div>
                         </div>
