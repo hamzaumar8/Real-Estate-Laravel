@@ -17,10 +17,14 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
+
+    <link href="{{ asset('assets/css/tooltips.css') }}" rel="stylesheet" />
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- CSS Files -->
-    <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
+
+    <link href="{{ asset('assets/css/perfect-scrollbar.css') }}">
+    <link href="{{ asset('assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4') }}" rel="stylesheet" />
 
     <!-- styles -->
     @livewireStyles
@@ -38,16 +42,14 @@
         <div class="w-full px-6 py-6 mx-auto">
             {{ $slot }}
         </div>
-
     </main>
 
 
-    @if(session()->has('success'))
-    <div x-data="{ show: true}" x-init="setTimeout(() => show = false, 4000)" x-show="show"
+    <div x-data=" { show: true}" x-init="setTimeout(() => show = false, 4000)" x-show="show"
         class="position-fixed bg-success rounded right-3 text-sm py-2 px-4">
         <p class="m-0">{{ session('success')}}</p>
     </div>
-    @endif
+
 
     <!-- Scripts -->
     @livewireScripts
@@ -55,7 +57,17 @@
 
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
+    <script src="{{ asset('assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4')}}" async></script>
+
+    <script src="{{ asset('assets/js/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('assets/js/navbar-collapse.js') }}"></script>
+    <script src="{{ asset('assets/js/tooltips.js') }}"></script>
+    <script src="{{ asset('assets/js/nav-pills.js') }}"></script>
+    <script src="{{ asset('assets/js/dropdown.js') }}"></script>
+    <script src="{{ asset('assets/js/fixed-plugin.js') }}"></script>
+    <script src="{{ asset('assets/js/sidenav-burger.js') }}"></script>
+    <script src="{{ asset('assets/js/navbar-sticky.js') }}"></script>
+
 </body>
 
 </html>

@@ -20,7 +20,7 @@
             </div>
             <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
 
-                <li class="flex items-center pl-4 xl:hidden">
+                <li class="flex items-center pl-4 xl:hidden mx-2">
                     <a href="javascript:;" class="block p-0 transition-all ease-nav-brand text-sm text-slate-500"
                         sidenav-trigger>
                         <div class="w-4.5 overflow-hidden">

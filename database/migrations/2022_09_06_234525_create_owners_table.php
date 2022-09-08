@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('phone2')->nullable();
             $table->text('address');
             $table->string('passport_picture');
-            $table->string('tin')->nullable();
+            $table->string('tin')->unique()->nullable();
             $table->string('nid')->unique();
             $table->timestamps();
         });

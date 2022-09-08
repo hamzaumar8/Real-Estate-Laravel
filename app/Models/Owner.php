@@ -20,4 +20,9 @@ class Owner extends Model
         'tin',
         'nid',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
