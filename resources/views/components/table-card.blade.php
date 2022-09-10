@@ -17,6 +17,16 @@
                 </div>
             </div>
             <div class="flex-auto p-6">
+
+                @if(Session::has('success'))
+                <x-alert-success>{{Session::get('success')}}</x-alert-success>
+                @endif
+
+                @if(Session::has('error'))
+                <x-alert-error>{{Session::get('error')}}</x-alert-error>
+                @endif
+                <x-errors class="mb-4" />
+
                 {{ $slot }}
             </div>
         </div>

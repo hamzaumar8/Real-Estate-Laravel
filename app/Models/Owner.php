@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,6 +21,14 @@ class Owner extends Model
         'tin',
         'nid',
     ];
+
+    public static function booted()
+    {
+        static::creating(function ($model) {
+            $model->uuid = Str::uuid();
+            $model->token = Str::random(32);
+        });
+    }
 
     public function user()
     {

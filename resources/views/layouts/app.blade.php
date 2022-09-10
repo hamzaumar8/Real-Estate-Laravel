@@ -36,6 +36,7 @@
 </head>
 
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+    <x-notifications />
     @include('layouts.sidebar')
     <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200 ">
         @include('layouts.navigation')
@@ -43,12 +44,6 @@
             {{ $slot }}
         </div>
     </main>
-
-
-    <div x-data=" { show: true}" x-init="setTimeout(() => show = false, 4000)" x-show="show"
-        class="position-fixed bg-success rounded right-3 text-sm py-2 px-4">
-        <p class="m-0">{{ session('success')}}</p>
-    </div>
 
 
     <!-- Scripts -->
