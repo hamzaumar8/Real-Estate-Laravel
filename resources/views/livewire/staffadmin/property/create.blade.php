@@ -6,6 +6,9 @@
             <x-input label="Property Title" type="text" placeholder="Property Title" required
                 wire:model.defer="title" />
 
+            <x-input label="House Number" type="text" placeholder="House Number" required
+                wire:model.defer="house_number" />
+
             <x-textarea label="Address" placeholder="Enter Address" wire:model.defer="address" />
 
         </div>

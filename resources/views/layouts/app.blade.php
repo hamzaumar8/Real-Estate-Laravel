@@ -38,8 +38,10 @@
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
     <x-notifications />
     @include('layouts.sidebar')
-    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full min-h-screen rounded-xl transition-all duration-200">
         @include('layouts.navigation')
+
+        <!--  -->
         @if (!Route::is('dashboard'))
         <div class="w-full px-6 py-6 mx-auto">
             <!-- breadcrumb -->
@@ -52,6 +54,8 @@
             </ol>
         </div>
         @endif
+
+        <!--  -->
         <div class="w-full px-6 py-6 mx-auto">
             {{ $slot }}
         </div>
@@ -61,6 +65,7 @@
     <!-- Scripts -->
     @livewireScripts
     @powerGridScripts
+    @livewire('livewire-ui-modal')
 
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>

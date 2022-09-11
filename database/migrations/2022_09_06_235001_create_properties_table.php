@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
+            $table->string('property_number')->unique();
             $table->string('title')->nullable();
             $table->string('address')->nullable();
-            $table->string('house_number')->nullable();
+            $table->string('house_number')->unique()->nullable();
             $table->timestamps();
         });
     }
