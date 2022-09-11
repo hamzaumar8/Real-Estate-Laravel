@@ -18,21 +18,28 @@
 
             <x-input label="TIN Number" type="text" placeholder="TIN Number" wire:model.defer="tin" required />
 
-            <x-input label="National Identification Number" type="text" placeholder="National Identification Number" required wire:model.defer="nid" />
+            <x-input label="National Identification Number" type="text" placeholder="National Identification Number"
+                required wire:model.defer="nid" />
 
-            <x-inputs.maskable label="Phone Number 1" mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone Number 1" required wire:model.defer="phone1" />
+            <x-inputs.maskable label="Phone Number 1" mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']"
+                placeholder="Phone Number 1" required wire:model.defer="phone1" />
 
-            <x-inputs.maskable label="Phone Number 2 (optional)" mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone Number 2 (optional)" wire:model.defer="phone2" />
+            <x-inputs.maskable label="Phone Number 2 (optional)"
+                mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone Number 2 (optional)"
+                wire:model.defer="phone2" />
 
             <x-textarea label="Address" placeholder="Enter Address" wire:model.defer="address" />
 
             <div class="">
                 <x-input label="Passport Picture" type="file" wire:model.defer="passport_picture" />
+                <div wire:loading wire:target="passport_picture">Uploading...</div>
+
                 @if($passport_picture)
                 <div class=" mb-4">
                     <img src="{{$passport_picture->temporaryUrl()}}" class="max-h-[150px] text-center" alt="">
                 </div>
                 @endif
+
             </div>
 
 
