@@ -38,16 +38,16 @@
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
     <x-notifications />
     @include('layouts.sidebar')
-    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200 ">
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
         @include('layouts.navigation')
         @if (!Route::is('dashboard'))
         <div class="w-full px-6 py-6 mx-auto">
             <!-- breadcrumb -->
             <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
                 <li class="leading-normal text-sm">
-                    <a class="opacity-50 text-slate-700" href="{{route('dashboard')}}">Dashboard</a>
+                    <a class="text-slate-700 font-semibold" href="{{route('dashboard')}}">Dashboard</a>
                 </li>
-                <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
+                <li class="opacity-50 text-sm pl-2 capitalize leading-normal text-gray-900 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
                     aria-current="page">{{request()->segment(1)}}</li>
             </ol>
         </div>

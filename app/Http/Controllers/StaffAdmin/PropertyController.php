@@ -14,7 +14,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        return view('staffadmin.property.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        //
+        return view('staffadmin.property.create');
     }
 
     /**
