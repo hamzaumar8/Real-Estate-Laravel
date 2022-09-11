@@ -18,15 +18,11 @@
 
             <x-input label="TIN Number" type="text" placeholder="TIN Number" wire:model.defer="tin" required />
 
-            <x-input label="National Identification Number" type="text" placeholder="National Identification Number"
-                required wire:model.defer="nid" />
+            <x-input label="National Identification Number" type="text" placeholder="National Identification Number" required wire:model.defer="nid" />
 
-            <x-inputs.maskable label="Phone Number 1" mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']"
-                placeholder="Phone Number 1" required wire:model.defer="phone1" />
+            <x-inputs.maskable label="Phone Number 1" mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone Number 1" required wire:model.defer="phone1" />
 
-            <x-inputs.maskable label="Phone Number 2 (optional)"
-                mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone Number 2 (optional)"
-                wire:model.defer="phone2" />
+            <x-inputs.maskable label="Phone Number 2 (optional)" mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone Number 2 (optional)" wire:model.defer="phone2" />
 
             <x-textarea label="Address" placeholder="Enter Address" wire:model.defer="address" />
 
@@ -42,7 +38,7 @@
 
         </div>
         <div class="flex items-center justify-end mt-4">
-            <x-button rose type="submit" spinner="save" :label="__('Submit')" />
+            <x-button positive type="submit" spinner="save" :label="__('Submit')" />
         </div>
     </form>
 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Staffadmin\Owner;
 
+use App\Mail\OwnerInvite;
 use App\Models\Invite;
 use App\Models\Owner;
 use App\Models\User;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Exception;
+use Illuminate\Support\Facades\Mail;
 use WireUi\Traits\Actions;
 
 class Create extends Component
@@ -58,6 +60,9 @@ class Create extends Component
                 'passport_picture' => $pictureName,
             ]);
             $owner->save();
+
+            // Sent Invite Mail
+            Mail::to($owner->email)->send(new OwnerInvite($owner));
 
             session()->flash('success', 'Owners details was successfully saved!');
             return redirect()->route('owners.index');

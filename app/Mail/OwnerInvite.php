@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Owner;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,14 +12,15 @@ class OwnerInvite extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public Owner $owner;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($owner)
     {
-        //
+        $this->owner = $owner;
     }
 
     /**
@@ -28,6 +30,6 @@ class OwnerInvite extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.owners.invite');
+        return $this->subject("Authentication Invitation from Realestate")->markdown('mails.owners.invite');
     }
 }
