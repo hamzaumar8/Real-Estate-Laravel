@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StaffAdmin\OwnersController;
+use App\Http\Controllers\StaffAdmin\PropertyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,13 +19,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return redirect()->route('dashboard');
+})->middleware(['auth']);
 
 // Staff Admin
 Route::middleware(['auth'])->group(function () {
     Route::resource('owners', OwnersController::class);
+    Route::resource('property', PropertyController::class);
 });
+
+Route::get('/profile', function () {
+    // return view('profile');
+    return redirect()->route('dashboard');
+})->middleware(['auth'])->name('profile');
+
 
 require __DIR__ . '/auth.php';

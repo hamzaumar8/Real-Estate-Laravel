@@ -40,6 +40,18 @@
     @include('layouts.sidebar')
     <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200 ">
         @include('layouts.navigation')
+        @if (!Route::is('dashboard'))
+        <div class="w-full px-6 py-6 mx-auto">
+            <!-- breadcrumb -->
+            <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
+                <li class="leading-normal text-sm">
+                    <a class="opacity-50 text-slate-700" href="{{route('dashboard')}}">Dashboard</a>
+                </li>
+                <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
+                    aria-current="page">{{request()->segment(1)}}</li>
+            </ol>
+        </div>
+        @endif
         <div class="w-full px-6 py-6 mx-auto">
             {{ $slot }}
         </div>
@@ -55,11 +67,9 @@
     <script src="{{ asset('assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4')}}" async></script>
 
     <script src="{{ asset('assets/js/perfect-scrollbar.js') }}"></script>
-    <script src="{{ asset('assets/js/navbar-collapse.js') }}"></script>
     <script src="{{ asset('assets/js/tooltips.js') }}"></script>
     <script src="{{ asset('assets/js/nav-pills.js') }}"></script>
     <script src="{{ asset('assets/js/dropdown.js') }}"></script>
-    <script src="{{ asset('assets/js/fixed-plugin.js') }}"></script>
     <script src="{{ asset('assets/js/sidenav-burger.js') }}"></script>
     <script src="{{ asset('assets/js/navbar-sticky.js') }}"></script>
 

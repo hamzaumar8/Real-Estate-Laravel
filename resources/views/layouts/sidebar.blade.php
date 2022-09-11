@@ -1,6 +1,6 @@
  <!-- sidenav  -->
  <aside
-     class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
+     class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased transition-transform duration-200 xl:left-0 xl:translate-x-0 ps xl:bg-white shadow-soft-xl">
      <div class="h-19.5">
          <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
              sidenav-close></i>
@@ -10,9 +10,9 @@
          </a>
      </div>
 
-     <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
+     <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent mb-4" />
 
-     <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
+     <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
          <ul class="flex flex-col pl-0 mb-0">
              <li class="mt-0.5 w-full">
                  <x-sidebar-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -31,7 +31,7 @@
              </li>
 
              <li class="mt-0.5 w-full">
-                 <x-sidebar-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                 <x-sidebar-link :href="route('property.index')" :active="request()->routeIs('property.index')">
                      <x-slot name="icon">
                          <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -66,19 +66,19 @@
                                  d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
                          </svg>
                      </x-slot>
-                     {{ __('Owner') }}
+                     {{ __('Owners') }}
                  </x-sidebar-link>
              </li>
 
 
              <!--  -->
              <li class="w-full mt-4">
-                 <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Account pages</h6>
+                 <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Account</h6>
              </li>
              <!--  -->
 
              <li class="mt-0.5 w-full">
-                 <x-sidebar-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                 <x-sidebar-link :href="route('profile')" :active="request()->routeIs('profile')">
                      <x-slot name="icon">
                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                              class="w-6 h-6">
@@ -91,29 +91,34 @@
                  </x-sidebar-link>
              </li>
              <li class="mt-0.5 w-full">
-                 <x-sidebar-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                     <x-slot name="icon">
-                         <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                             <title>document</title>
-                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                 <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                     <g transform="translate(1716.000000, 291.000000)">
-                                         <g transform="translate(154.000000, 300.000000)">
-                                             <path class="fill-slate-800 opacity-60"
-                                                 d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z">
-                                             </path>
-                                             <path class="fill-slate-800"
-                                                 d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z">
-                                             </path>
+                 <form method="POST" action="{{ route('logout') }}">
+                     @csrf
+                     <x-sidebar-link :href="route('logout')"
+                         onclick="event.preventDefault();this.closest('form').submit();">
+                         <x-slot name="icon">
+                             <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                 <title>document</title>
+                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                     <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF"
+                                         fill-rule="nonzero">
+                                         <g transform="translate(1716.000000, 291.000000)">
+                                             <g transform="translate(154.000000, 300.000000)">
+                                                 <path class="fill-slate-800 opacity-60"
+                                                     d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z">
+                                                 </path>
+                                                 <path class="fill-slate-800"
+                                                     d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z">
+                                                 </path>
+                                             </g>
                                          </g>
                                      </g>
                                  </g>
-                             </g>
-                         </svg>
-                     </x-slot>
-                     {{ __('Log Out') }}
-                 </x-sidebar-link>
+                             </svg>
+                         </x-slot>
+                         {{ __('Log Out') }}
+                     </x-sidebar-link>
+                 </form>
              </li>
          </ul>
      </div>

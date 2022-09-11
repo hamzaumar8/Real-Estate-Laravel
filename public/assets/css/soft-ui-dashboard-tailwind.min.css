@@ -871,7 +871,7 @@ h6 {
     height: 1px;
 }
 .h-sidenav {
-    height: calc(100vh - 370px);
+    height: calc(100vh - 70px);
 }
 .h-8 {
     height: 2rem;

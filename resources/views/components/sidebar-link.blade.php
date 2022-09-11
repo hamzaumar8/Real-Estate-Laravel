@@ -8,7 +8,7 @@ text-center xl:p-2.5 text-white'
 text-center
 xl:p-2.5 bg-gray-200';
 
-$cls = ($active ?? false) ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap
+$cls = ($active ?? false) ? 'py-2.7 shadow-none text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap
 rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors': 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex
 items-center whitespace-nowrap rounded-lg px-3 font-semibold text-slate-700 transition-colors shadow-none';
 @endphp

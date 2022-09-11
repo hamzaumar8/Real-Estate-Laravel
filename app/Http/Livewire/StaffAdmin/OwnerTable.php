@@ -85,6 +85,7 @@ final class OwnerTable extends PowerGridComponent
             ->addColumn('id')
             ->addColumn('title')
             ->addColumn('name')
+            ->addColumn('name_formatted', fn (Owner $model) => '<a class="underline" href="' . route('owners.show', ['owner' => $model->id]) . '"/>' . $model->name . '</a>')
             ->addColumn('email')
             ->addColumn('phone1')
             ->addColumn('phone2')
@@ -92,8 +93,7 @@ final class OwnerTable extends PowerGridComponent
             ->addColumn('passport_picture')
             ->addColumn('tin')
             ->addColumn('nid')
-            ->addColumn('created_at_formatted', fn (Owner $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'))
-            ->addColumn('updated_at_formatted', fn (Owner $model) => Carbon::parse($model->updated_at)->format('d/m/Y H:i:s'));
+            ->addColumn('created_at_formatted', fn (Owner $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
     }
 
     /*
@@ -119,7 +119,7 @@ final class OwnerTable extends PowerGridComponent
                 ->sortable()
                 ->searchable(),
 
-            Column::make('NAME', 'name')
+            Column::make('NAME', 'name_formatted', 'name')
                 ->sortable()
                 ->searchable(),
 
@@ -131,15 +131,7 @@ final class OwnerTable extends PowerGridComponent
                 ->sortable()
                 ->searchable(),
 
-            Column::make('PHONE2', 'phone2')
-                ->sortable()
-                ->searchable(),
-
             Column::make('ADDRESS', 'address')
-                ->sortable()
-                ->searchable(),
-
-            Column::make('PASSPORT PICTURE', 'passport_picture')
                 ->sortable()
                 ->searchable(),
 
@@ -151,7 +143,7 @@ final class OwnerTable extends PowerGridComponent
                 ->sortable()
                 ->searchable(),
 
-            Column::make('CREATED AT', 'created_at_formatted', 'created_at')
+            Column::make('ADDED AT', 'created_at_formatted', 'created_at')
                 ->searchable()
                 ->sortable(),
 
