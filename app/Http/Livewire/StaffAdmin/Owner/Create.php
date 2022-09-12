@@ -31,8 +31,8 @@ class Create extends Component
             'phone1' => 'required|max:15',
             'phone2' => 'nullable|max:15',
             'address' => 'required|string|max:255',
-            'tin' => 'required|string|max:255|unique:owners',
-            'nid' => 'required|string|max:255|unique:owners',
+            'tin' => 'required|string|max:20|unique:owners',
+            'nid' => 'required|string|max:20|unique:owners',
             'passport_picture' => 'nullable|mimes:webp,jpeg,jpg,png',
         ];
     }
@@ -59,10 +59,11 @@ class Create extends Component
                 'nid' => $this->nid,
                 'passport_picture' => $pictureName,
             ]);
-            $owner->save();
 
             // Sent Invite Mail
             Mail::to($owner->email)->send(new OwnerInvite($owner));
+
+            $owner->save();
 
             session()->flash('success', 'Owners details was successfully saved!');
             return redirect()->route('owners.index');
