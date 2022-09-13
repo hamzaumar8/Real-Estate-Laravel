@@ -7,7 +7,8 @@
                     <div
                         class="relative flex justify-center items-center h-[250px] w-[250px] border border-solid overflow-hidden rounded-2xl border-gray-300">
                         @if($owner->passport_picture)
-                        <img src="{{$owner->passport_picture}}" class="w-full h-full" alt="">
+                        <img src="{{asset('assets/img/owners')}}/{{$owner->passport_picture}}" class="w-full h-full"
+                            alt="">
                         @else
                         <x-application-logo class="inline h-full w-full transition-all duration-200 ease-nav-brand"
                             alt="main_logo" />

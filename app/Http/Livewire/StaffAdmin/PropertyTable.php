@@ -211,7 +211,7 @@ final class PropertyTable extends PowerGridComponent
     {
         return [
             Button::make('edit', 'Edit')
-                ->class('bg-indigo-500 cursor-pointer text-white px-4 py-2 rounded-md text-xs font-semibold uppercase border border-transparent')
+                ->class('bg-indigo-500 cursor-pointer text-white px-4 py-2 rounded-md text-xs font-semibold uppercase border border-transparent ')
                 ->emit('edit-property', [
                     'propertyId' => 'id',
                     'custom' => __METHOD__

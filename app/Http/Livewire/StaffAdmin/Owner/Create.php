@@ -60,10 +60,11 @@ class Create extends Component
                 'passport_picture' => $pictureName,
             ]);
 
+            $owner->save();
+
             // Sent Invite Mail
             Mail::to($owner->email)->send(new OwnerInvite($owner));
 
-            $owner->save();
 
             session()->flash('success', 'Owners details was successfully saved!');
             return redirect()->route('owners.index');

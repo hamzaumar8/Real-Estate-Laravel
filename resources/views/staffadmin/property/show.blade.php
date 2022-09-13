@@ -3,22 +3,33 @@
 
 
         <div class="grid grid-cols-3 gap-5 mt-4">
-            <div>
-                Thesis / Dissertation Title
+            <div class="col-span-3 border-b"></div>
+            <div class="capitalize font-bold">
+                Property Number
+            </div>
+            <div class="col-span-2">
+                {{$property->property_number}}
+            </div>
+            <div class="col-span-3 border-b"></div>
+            <div class="capitalize font-bold">
+                Property Title
             </div>
             <div class="col-span-2">
                 {{$property->title}}
             </div>
             <div class="col-span-3 border-b"></div>
-            <div>
-                Appointment Date
+            <div class="capitalize font-bold">
+                Property address
             </div>
             <div class="col-span-2">
                 {{$property->address}}
             </div>
             <div class="col-span-3 border-b"></div>
-            <div>
-                Completed Status
+            <div class="capitalize font-bold">
+                Property House Number
+            </div>
+            <div class="col-span-2">
+                {{$property->house_number}}
             </div>
             <div class="col-span-3 border-b"></div>
         </div>

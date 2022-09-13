@@ -12,6 +12,49 @@ use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Heade
 final class OwnerTable extends PowerGridComponent
 {
     use ActionButton;
+    //Table sort field
+    public string $sortField = 'owners.id';
+
+    /*
+    |--------------------------------------------------------------------------
+    |  Event listeners
+    |--------------------------------------------------------------------------
+    | Add custom events to OwnerTable
+    |
+    */
+    protected function getListeners(): array
+    {
+        return array_merge(
+            parent::getListeners(),
+            [
+                'edit-owner' => 'editOwner',
+                'bulkDelete',
+            ]
+        );
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    |  Bulk delete button
+    |--------------------------------------------------------------------------
+    */
+    public function bulkDelete(): void
+    {
+        $this->emit('openModal', 'staffadmin.owner.delete-action', [
+            'ownerIds'                 => $this->checkboxValues,
+            'confirmationTitle'       => 'Delete owner',
+            'confirmationDescription' => 'Are you sure you want to delete this owner?',
+        ]);
+    }
+    /*
+    |--------------------------------------------------------------------------
+    |  Edit Owner button
+    |--------------------------------------------------------------------------
+    */
+    public function editOwner(array $data): void
+    {
+        dd('You are editing', $data);
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -149,6 +192,21 @@ final class OwnerTable extends PowerGridComponent
 
         ];
     }
+    /*
+    |--------------------------------------------------------------------------
+    | Header Action Buttons
+    |--------------------------------------------------------------------------
+    */
+
+    public function header(): array
+    {
+        return [
+            Button::add('bulk-delete')
+                ->caption(__('Bulk delete'))
+                ->class('outline-none inline-flex justify-center items-center group transition-all ease-in duration-150 focus:ring-2 focus:ring-offset-2 hover:shadow-sm disabled:opacity-80 disabled:cursor-not-allowed rounded gap-x-2 text-sm px-4 py-2     ring-red-500 text-red-500 border border-red-500 hover:bg-red-50 dark:ring-offset-slate-800 dark:hover:bg-slate-700')
+                ->emit('bulkDelete', [])
+        ];
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -164,21 +222,27 @@ final class OwnerTable extends PowerGridComponent
      * @return array<int, Button>
      */
 
-    /*
+
     public function actions(): array
     {
-       return [
-           Button::make('edit', 'Edit')
-               ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2.5 m-1 rounded text-sm')
-               ->route('owner.edit', ['owner' => 'id']),
+        return [
+            Button::make('edit', 'Edit')
+                ->class('bg-indigo-500 cursor-pointer text-white px-4 py-2 rounded-md text-xs font-semibold uppercase border border-transparent ')
+                ->emit('edit-owner', [
+                    'ownerId' => 'id',
+                    'custom' => __METHOD__
+                ]),
 
-           Button::make('destroy', 'Delete')
-               ->class('bg-red-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
-               ->route('owner.destroy', ['owner' => 'id'])
-               ->method('delete')
+            Button::make('destroy', 'Delete')
+                ->class('px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase  cursor-pointer')
+                ->openModal('staffadmin.owner.delete-action', [
+                    'ownerId'                  => 'id',
+                    'confirmationTitle'       => 'Delete owner',
+                    'confirmationDescription' => 'Are you sure you want to delete this owner?',
+                ]),
         ];
     }
-    */
+
 
     /*
     |--------------------------------------------------------------------------
