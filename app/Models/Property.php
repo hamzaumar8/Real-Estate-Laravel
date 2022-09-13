@@ -28,4 +28,10 @@ class Property extends Model
             $model->property_number = 'PRT' . str_pad($property_number, 5, '0', STR_PAD_LEFT);
         });
     }
+
+
+    public function owners()
+    {
+        return $this->belongsToMany(Owner::class);
+    }
 }

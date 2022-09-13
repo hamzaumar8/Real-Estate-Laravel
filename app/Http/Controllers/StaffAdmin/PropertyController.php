@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\StaffAdmin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class PropertyController extends Controller
@@ -46,7 +47,8 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        //
+        $property = Property::findOrFail($id);
+        return view('staffadmin.property.show', compact('property'));
     }
 
     /**

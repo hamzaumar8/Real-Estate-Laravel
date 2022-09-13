@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\StaffAdmin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Owner;
 use Illuminate\Http\Request;
 
 class OwnersController extends Controller
@@ -46,7 +47,8 @@ class OwnersController extends Controller
      */
     public function show($id)
     {
-        //
+        $owner = Owner::findOrFail($id);
+        return view('staffadmin.owners.show', compact('owner'));
     }
 
     /**
