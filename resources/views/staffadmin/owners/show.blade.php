@@ -46,14 +46,20 @@
                     </div>
                     <div>
                         <p>
-                            <a href="{{route('property.show',$property->id)}}">{{$property->title}}
-                                {{$property->name}}</a>
+                            <span class="capitalize font-semibold mr-2">property number - </span>
+                            <a href="{{route('property.show',$property->id)}}">{{$property->property_number}}</a>
                         </p>
                         <p>
-                            {{$property->email}}
+                            <span class="capitalize font-semibold mr-2">title - </span>
+                            <a href="{{route('property.show',$property->id)}}">{{$property->title}}</a>
                         </p>
                         <p>
-                            {{$property->phone1}}
+                            <span class="capitalize font-semibold mr-2">address - </span>
+                            {{$property->address}}
+                        </p>
+                        <p>
+                            <span class="capitalize font-semibold mr-2">address - </span>
+                            {{$property->house_number}}
                         </p>
 
                     </div>
