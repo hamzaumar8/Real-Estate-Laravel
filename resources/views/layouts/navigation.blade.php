@@ -1,7 +1,7 @@
 <!-- Navbar -->
-<nav class="relative flex flex-wrap items-center justify-between px-0 py-2 my-4 mx-6 transition-all shadow-none duration-250 ease-soft-in rounded-2xl lg:flex-nowrap lg:justify-start"
+<nav class="relative flex flex-wrap items-center justify-between px-0 py-2 my-4 mx-6 transition-all shadow-none duration-250 ease-soft-in rounded-2xl lg:flex-nowrap lg:justify-start bg-white"
     navbar-main navbar-scroll="false">
-    <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
+    <div class="flex items-center justify-between w-full px-4 py-2 mx-auto flex-wrap-inherit">
         <nav>
             <h6 class="mb-0 font-bold capitalize">{{Str::ucfirst(request()->segment(1))}}</h6>
         </nav>
