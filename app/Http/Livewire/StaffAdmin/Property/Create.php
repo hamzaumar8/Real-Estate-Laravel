@@ -41,8 +41,8 @@ class Create extends Component
             $message = $e->getMessage();
             $this->addError('Exception Message: ', $message);
             $this->notification()->error(
-                $title = 'Error !!!',
-                $description = 'Exception Message: ' . $message,
+                'Error !!!',
+                'Exception Message: ' . $message,
             );
         }
     }

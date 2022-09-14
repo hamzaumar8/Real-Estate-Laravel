@@ -16,6 +16,7 @@ class AssignOwner extends ModalComponent
     public array $propertyIds = [];
 
     public string $confirmationTitle = '';
+    public string $routeId = '';
 
     public $owner;
 
@@ -64,6 +65,10 @@ class AssignOwner extends ModalComponent
             }
 
             session()->flash('success', 'Property was assigned to owners successfully');
+
+            if ($this->routeId === 'show') {
+                return redirect()->route('property.show', $this->propertyId);
+            }
             return redirect()->route('property.index');
 
             // $this->closeModalWithEvents([
@@ -73,8 +78,8 @@ class AssignOwner extends ModalComponent
             $message = $e->getMessage();
             $this->addError('Exception Message: ', $message);
             $this->notification()->error(
-                $title = 'Error !!!',
-                $description = 'Exception Message: ' . $message,
+                'Error !!!',
+                'Exception Message: ' . $message,
             );
         }
     }

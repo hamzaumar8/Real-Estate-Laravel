@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
         "power-components/livewire-powergrid": "^3.2",
+        "ralphjsmit/livewire-urls": "^1.1",
         "wire-elements/modal": "^1.0",
         "wireui/wireui": "^1.15"
     },
