@@ -36,7 +36,7 @@ Route::name('api.')->prefix('api')->group(function () {
             ->when(
                 $request->exists('selected'),
                 fn (Builder $query) => $query->whereIn('id', $request->input('selected', [])),
-                fn (Builder $query) => $query->limit(10)
+                fn (Builder $query) => $query->limit(2)
             )
             ->get();
     })->name('owners');

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StaffAdmin\OwnersController;
 use App\Http\Controllers\StaffAdmin\PropertyController;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
@@ -26,8 +25,10 @@ Route::get('/', function () {
 
 // Staff Admin
 Route::middleware(['auth'])->group(function () {
-    Route::resource('owners', OwnersController::class);
-    Route::resource('property', PropertyController::class);
+
+    Route::resource('owners', OwnersController::class)->only(['index', 'create', 'edit', 'show']);
+
+    Route::resource('property', PropertyController::class)->only(['index', 'create', 'edit', 'show']);
 });
 
 Route::get('/profile', function () {

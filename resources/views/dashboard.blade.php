@@ -10,14 +10,14 @@
                             <div>
                                 <p class="mb-0 font-sans font-semibold leading-normal text-sm">Properties</p>
                                 <h5 class="mb-0 font-bold">
-                                    53,000
+                                    {{$propertyTotal}}
                                     <!-- <span class="leading-normal text-sm font-weight-bolder text-lime-500">+55%</span> -->
                                 </h5>
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
-                            <div class="inline-block w-12 h-12 text-center rounded-lg bg-green-500">
-                                <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
+                            <div class="inline-block w-12 h-12 text-center rounded-lg bg-amber-500">
+                                <i class="fas fa-house-user leading-none text-lg relative top-3.5 text-white"></i>
                             </div>
                         </div>
                     </div>
@@ -34,14 +34,14 @@
                             <div>
                                 <p class="mb-0 font-sans font-semibold leading-normal text-sm">Owners</p>
                                 <h5 class="mb-0 font-bold">
-                                    2,300
+                                    {{$ownerTotal}}
                                     <!-- <span class="leading-normal text-sm font-weight-bolder text-lime-500">+3%</span> -->
                                 </h5>
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
-                            <div class="inline-block w-12 h-12 text-center rounded-lg bg-green-500">
-                                <i class="ni leading-none ni-world text-lg relative top-3.5 text-white"></i>
+                            <div class="inline-block w-12 h-12 text-center rounded-lg bg-blue-500">
+                                <i class="fa fa-users text-lg relative top-3.5 text-white leading-none "></i>
                             </div>
                         </div>
                     </div>
