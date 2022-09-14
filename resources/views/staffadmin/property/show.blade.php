@@ -53,10 +53,17 @@
                         </p>
                         <p>
                             {{$owner->phone1}}
+                            {{$owner->id}}
                         </p>
 
                     </div>
                 </div>
+                <x-slot name="footer">
+                    <div class="flex justify-end items-center">
+                        <livewire:staffadmin.property.unassign-owner :ownerId="$owner->id"
+                            :propertyId="$property->id" />
+                    </div>
+                </x-slot>
             </x-card>
             @endforeach
         </div>

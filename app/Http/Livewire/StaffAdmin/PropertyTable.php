@@ -210,6 +210,13 @@ final class PropertyTable extends PowerGridComponent
     public function actions(): array
     {
         return [
+            Button::make('assign', 'Assign')
+                ->class('px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase  cursor-pointer')
+                ->openModal('staffadmin.property.assign-owner', [
+                    'propertyId' => 'id',
+                    'confirmationTitle' => 'Assign Owner',
+                ]),
+
             Button::make('edit', 'Edit')
                 ->class('bg-indigo-500 cursor-pointer text-white px-4 py-2 rounded-md text-xs font-semibold uppercase border border-transparent ')
                 ->emit('edit-property', [
@@ -219,7 +226,7 @@ final class PropertyTable extends PowerGridComponent
 
             Button::make('destroy', 'Delete')
                 ->class('px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase  cursor-pointer')
-                ->openModal('staffadmin.property.delete-action', [
+                ->openModal('staffadmin.pro    perty.delete-action', [
                     'propertyId'                  => 'id',
                     'confirmationTitle'       => 'Delete property',
                     'confirmationDescription' => 'Are you sure you want to delete this property?',
